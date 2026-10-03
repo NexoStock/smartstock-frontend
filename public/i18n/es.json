@@ -1,0 +1,146 @@
+{
+  "shared": {
+    "language": "Idioma",
+    "notifications": "Alertas",
+    "menuToggle": "Abrir o cerrar el menú",
+    "skipToContent": "Saltar al contenido",
+    "loading": "Cargando…",
+    "error": "Algo salió mal. Inténtalo de nuevo.",
+    "retry": "Reintentar",
+    "dateRange": "Rango de fechas",
+    "search": "Buscar",
+    "empty": "Todavía no hay nada que mostrar.",
+    "account": "Cuenta",
+    "footer": "SmartStock · Inventario real, siempre visible",
+    "menu": {
+      "dashboard": "Panel",
+      "home": "Inicio",
+      "products": "Productos",
+      "sales": "Ventas",
+      "purchases": "Compras",
+      "sensors": "Sensores",
+      "alerts": "Alertas",
+      "comparison": "Comparación",
+      "reports": "Reportes",
+      "settings": "Configuración",
+      "signOut": "Cerrar sesión"
+    },
+    "status": {
+      "pending": "Pendiente",
+      "received": "Recibida",
+      "cancelled": "Cancelada",
+      "completed": "Completada",
+      "online": "En línea",
+      "disconnected": "Desconectado",
+      "available": "Disponible",
+      "lowStock": "Stock bajo",
+      "healthy": "Normal",
+      "noData": "Sin datos",
+      "discrepancy": "Discrepancia"
+    },
+    "placeholder": {
+      "pending": "Pantalla pendiente de implementar",
+      "stories": "Historias de usuario",
+      "mockups": "Wireframes y mockups",
+      "context": "Contexto",
+      "hint": "Reemplaza esta vista por la pantalla real. Conserva los estados de carga, vacío y error, las traducciones, las etiquetas ARIA y Money."
+    },
+    "notFound": {
+      "title": "Página no encontrada",
+      "text": "La página que buscas no existe.",
+      "back": "Ir al panel"
+    }
+  },
+  "iam": {
+    "devSignIn": {
+      "title": "Acceso de desarrollo",
+      "text": "Botones temporales para probar cada menú hasta implementar IAM. Quítalos en el paso de IAM.",
+      "minimarket": "Entrar como Minimarket",
+      "bodega": "Entrar como Bodega"
+    },
+    "signIn": {
+      "title": "Iniciar sesión"
+    },
+    "signUp": {
+      "title": "Crear cuenta"
+    },
+    "forgotPassword": {
+      "title": "Recuperar contraseña"
+    }
+  },
+  "catalog": {
+    "productList": {
+      "title": "Productos"
+    },
+    "productNew": {
+      "title": "Nuevo producto"
+    },
+    "productDetails": {
+      "title": "Detalle del producto"
+    },
+    "productEdit": {
+      "title": "Editar producto"
+    },
+    "list": {
+      "name": "Producto",
+      "category": "Categoría",
+      "stock": "Stock registrado",
+      "level": "Nivel de stock",
+      "units": "unidades",
+      "empty": "Todavía no hay productos."
+    }
+  },
+  "devices": {
+    "sensorList": {
+      "title": "Sensores"
+    },
+    "sensorLink": {
+      "title": "Vincular sensor"
+    },
+    "sensorThreshold": {
+      "title": "Umbral mínimo"
+    }
+  },
+  "inventory": {
+    "comparison": {
+      "title": "Comparación"
+    },
+    "saleList": {
+      "title": "Ventas"
+    },
+    "saleNew": {
+      "title": "Nueva venta"
+    },
+    "saleDetails": {
+      "title": "Detalle de la venta"
+    },
+    "purchaseList": {
+      "title": "Compras"
+    },
+    "supplierList": {
+      "title": "Proveedores"
+    },
+    "purchaseNew": {
+      "title": "Nueva compra"
+    },
+    "purchaseDetails": {
+      "title": "Detalle de la compra"
+    }
+  },
+  "alerts": {
+    "alertList": {
+      "title": "Alertas"
+    },
+    "notificationSettings": {
+      "title": "Configuración de notificaciones"
+    }
+  },
+  "analytics": {
+    "dashboard": {
+      "title": "Panel"
+    },
+    "reports": {
+      "title": "Reportes"
+    }
+  }
+}

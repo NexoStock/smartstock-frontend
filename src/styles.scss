@@ -1,0 +1,7 @@
+@use './app/shared/presentation/theme/theme';
+
+html, body { height: 100%; margin: 0; }
+body { font-family: Roboto, system-ui, sans-serif; background: var(--ss-page-bg); color: var(--mat-sys-on-surface); }
+h1 { font-size: 1.5rem; margin: 0 0 0.5rem; font-weight: 500; }
+:focus-visible { outline: 3px solid var(--mat-sys-primary); outline-offset: 2px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }

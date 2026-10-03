@@ -1,0 +1,206 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "email": "store.owner@email.com",
+      "password": "Secret123",
+      "nombreNegocio": "Fresh Corner",
+      "tipoNegocio": "minimarket"
+    },
+    {
+      "id": 2,
+      "email": "bodega.owner@email.com",
+      "password": "Secret123",
+      "nombreNegocio": "Bodega Don Pepe",
+      "tipoNegocio": "bodega"
+    }
+  ],
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Rice 1 kg",
+      "sku": "RICE-1KG",
+      "categoria": "Grocery",
+      "pesoUnitario": 1.0,
+      "precioVenta": 8.2,
+      "costoCompra": 6.5,
+      "proveedorHabitual": "Fresh Foods Co.",
+      "stockRegistrado": 2,
+      "umbralMinimo": 5,
+      "capacidadMaxima": 50,
+      "sensorId": 1
+    },
+    {
+      "id": 2,
+      "nombre": "Cooking Oil 1 L",
+      "sku": "OIL-1L",
+      "categoria": "Grocery",
+      "pesoUnitario": 0.92,
+      "precioVenta": 10.5,
+      "costoCompra": 8.5,
+      "proveedorHabitual": "Fresh Foods Co.",
+      "stockRegistrado": 4,
+      "umbralMinimo": 6,
+      "capacidadMaxima": 40,
+      "sensorId": 2
+    },
+    {
+      "id": 3,
+      "nombre": "Milk 1 L",
+      "sku": "MILK-1L",
+      "categoria": "Dairy",
+      "pesoUnitario": 1.03,
+      "precioVenta": 5.5,
+      "costoCompra": 4.2,
+      "proveedorHabitual": "Fresh Foods Co.",
+      "stockRegistrado": 14,
+      "umbralMinimo": 5,
+      "capacidadMaxima": 60,
+      "sensorId": 3
+    },
+    {
+      "id": 4,
+      "nombre": "Sugar 1 kg",
+      "sku": "SUGAR-1KG",
+      "categoria": "Grocery",
+      "pesoUnitario": 1.0,
+      "precioVenta": 4.8,
+      "costoCompra": 3.7,
+      "proveedorHabitual": "Fresh Foods Co.",
+      "stockRegistrado": 20,
+      "umbralMinimo": 6,
+      "capacidadMaxima": 50,
+      "sensorId": null
+    }
+  ],
+  "sensores": [
+    {
+      "id": 1,
+      "codigo": "SN-0001",
+      "productoId": 1,
+      "estado": "online",
+      "ultimaLectura": "2 min ago",
+      "pesoKg": 2.0
+    },
+    {
+      "id": 2,
+      "codigo": "SN-0002",
+      "productoId": 2,
+      "estado": "disconnected",
+      "ultimaLectura": "18 min ago",
+      "pesoKg": 3.68
+    },
+    {
+      "id": 3,
+      "codigo": "SN-0003",
+      "productoId": 3,
+      "estado": "online",
+      "ultimaLectura": "1 min ago",
+      "pesoKg": 12.36
+    },
+    {
+      "id": 4,
+      "codigo": "SN-0004",
+      "productoId": null,
+      "estado": "available",
+      "ultimaLectura": null,
+      "pesoKg": 20.0
+    }
+  ],
+  "proveedores": [
+    {
+      "id": 1,
+      "nombre": "Fresh Foods Co.",
+      "correo": "ventas@freshfoods.pe",
+      "telefono": "+51 999 111 222"
+    }
+  ],
+  "compras": [
+    {
+      "id": "PO-00031",
+      "proveedorId": 1,
+      "fecha": "2024-03-01",
+      "estado": "PENDING",
+      "total": 133.0,
+      "items": [
+        {
+          "productoId": 1,
+          "cantidad": 10,
+          "costoUnitario": 6.5
+        },
+        {
+          "productoId": 2,
+          "cantidad": 8,
+          "costoUnitario": 8.5
+        }
+      ]
+    }
+  ],
+  "ventas": [
+    {
+      "id": "R-00041",
+      "fecha": "2024-03-01",
+      "estado": "COMPLETED",
+      "total": 52.1,
+      "items": [
+        {
+          "productoId": 3,
+          "cantidad": 3,
+          "precioUnitario": 5.5
+        },
+        {
+          "productoId": 1,
+          "cantidad": 2,
+          "precioUnitario": 8.2
+        },
+        {
+          "productoId": 4,
+          "cantidad": 4,
+          "precioUnitario": 4.8
+        }
+      ]
+    }
+  ],
+  "movimientos-stock": [
+    {
+      "id": 1,
+      "productoId": 1,
+      "tipo": "OUT",
+      "cantidad": 2,
+      "origen": "R-00041",
+      "fecha": "2024-03-01"
+    }
+  ],
+  "alertas": [
+    {
+      "id": 1,
+      "tipo": "LOW_STOCK",
+      "productoId": 1,
+      "stockReferencia": 2,
+      "fuente": "sensor",
+      "estado": "ACTIVE"
+    },
+    {
+      "id": 2,
+      "tipo": "LOW_STOCK",
+      "productoId": 2,
+      "stockReferencia": 4,
+      "fuente": "registered",
+      "estado": "ACTIVE"
+    }
+  ],
+  "canales-notificacion": [
+    {
+      "id": 1,
+      "canal": "email",
+      "destino": "store.owner@email.com",
+      "activo": true
+    },
+    {
+      "id": 2,
+      "canal": "whatsapp",
+      "destino": "+51 987 654 321",
+      "activo": true
+    }
+  ]
+}

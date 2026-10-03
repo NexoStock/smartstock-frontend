@@ -1,0 +1,27 @@
+@use '@angular/material' as mat;
+
+// The Material Design theme is defined here, once. Views never set their own colors.
+html {
+  @include mat.theme((
+    color: (primary: mat.$azure-palette, tertiary: mat.$blue-palette),
+    typography: Roboto,
+    density: 0,
+  ));
+
+  // SmartStock brand
+  --mat-sys-primary: #1266d4;
+  --mat-sys-on-primary: #ffffff;
+  --mat-sys-primary-container: #d3e4fa;
+  --mat-sys-on-primary-container: #082b4c;
+  --ss-nav-bg: #082b4c;
+  --ss-nav-text: #d7e2ec;
+  --ss-nav-hover: #0d4275;
+  --ss-nav-border: #264963;
+  --ss-page-bg: #f5f9fd;
+  --ss-card-bg: #ffffff;
+  --ss-border: #dce6ef;
+  --ss-muted: #667085;
+  --ss-danger: #c0392b;
+  --ss-success: #168a4f;
+  --ss-warn: #b36b00;
+}

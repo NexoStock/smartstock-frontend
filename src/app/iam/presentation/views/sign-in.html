@@ -1,0 +1,12 @@
+<app-auth-layout>
+  <h1>{{ 'iam.signIn.title' | translate }}</h1>
+  <p>US02 · M20, M21</p>
+  <section class="dev-box" aria-labelledby="dev-title">
+    <h2 id="dev-title">{{ 'iam.devSignIn.title' | translate }}</h2>
+    <p>{{ 'iam.devSignIn.text' | translate }}</p>
+    <div class="dev-actions">
+      <button mat-flat-button type="button" (click)="enterAs('minimarket')">{{ 'iam.devSignIn.minimarket' | translate }}</button>
+      <button mat-stroked-button type="button" (click)="enterAs('bodega')">{{ 'iam.devSignIn.bodega' | translate }}</button>
+    </div>
+  </section>
+</app-auth-layout>

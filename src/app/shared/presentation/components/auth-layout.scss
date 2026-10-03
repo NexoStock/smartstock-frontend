@@ -1,0 +1,8 @@
+.auth { min-height: 100vh; display: grid; grid-template-columns: minmax(280px, 40%) 1fr; }
+.brand { background: var(--ss-nav-bg); color: #fff; padding: 2rem; display: flex; flex-direction: column; gap: 3rem; }
+.logo { font-size: 1.25rem; }
+.brand h2 { font-size: 2rem; font-weight: 500; margin: auto 0; }
+.panel { position: relative; display: grid; place-items: center; padding: 2rem 1rem; }
+.lang { position: absolute; top: 1rem; right: 1rem; }
+.card { width: min(440px, 100%); background: var(--ss-card-bg); border: 1px solid var(--ss-border); border-radius: 0.9rem; padding: 2rem; }
+@media (max-width: 768px) { .auth { grid-template-columns: 1fr; } .brand { padding: 1rem 1.5rem; } .brand h2 { display: none; } }
