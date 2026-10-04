@@ -1,5 +1,5 @@
 export const environment = {
-  apiBaseUrl: 'https://CHANGE-ME-backend-url/api',
+  apiBaseUrl: 'https://nexostock-fake-api.onrender.com',
   endpoints: {
     auth: '/auth',
     products: '/productos',

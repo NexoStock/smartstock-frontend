@@ -15,6 +15,7 @@
       "tipoNegocio": "bodega"
     }
   ],
+  "restablecimientos": [],
   "productos": [
     {
       "id": 1,
@@ -71,6 +72,20 @@
       "umbralMinimo": 6,
       "capacidadMaxima": 50,
       "sensorId": null
+    },
+    {
+      "id": 5,
+      "nombre": "Flour 1 kg",
+      "sku": "FLOUR-1KG",
+      "categoria": "Grocery",
+      "pesoUnitario": 1.0,
+      "precioVenta": null,
+      "costoCompra": 2.9,
+      "proveedorHabitual": "Fresh Foods Co.",
+      "stockRegistrado": 7,
+      "umbralMinimo": 5,
+      "capacidadMaxima": 50,
+      "sensorId": null
     }
   ],
   "sensores": [
@@ -78,50 +93,84 @@
       "id": 1,
       "codigo": "SN-0001",
       "productoId": 1,
-      "estado": "online",
-      "ultimaLectura": "2 min ago",
-      "pesoKg": 2.0
+      "pesoKg": 2.0,
+      "haceMin": 2
     },
     {
       "id": 2,
       "codigo": "SN-0002",
       "productoId": 2,
-      "estado": "disconnected",
-      "ultimaLectura": "18 min ago",
-      "pesoKg": 3.68
+      "pesoKg": 3.68,
+      "haceMin": 18
     },
     {
       "id": 3,
       "codigo": "SN-0003",
       "productoId": 3,
-      "estado": "online",
-      "ultimaLectura": "1 min ago",
-      "pesoKg": 12.36
+      "pesoKg": 12.36,
+      "haceMin": 1
     },
     {
       "id": 4,
       "codigo": "SN-0004",
       "productoId": null,
-      "estado": "available",
-      "ultimaLectura": null,
-      "pesoKg": 20.0
+      "pesoKg": 20.0,
+      "haceMin": null
+    }
+  ],
+  "lecturas": [
+    {
+      "sensorId": 1,
+      "pesoKg": 2.0,
+      "haceMin": 2
+    },
+    {
+      "sensorId": 1,
+      "pesoKg": 2.0,
+      "haceMin": 32
+    },
+    {
+      "sensorId": 1,
+      "pesoKg": 4.0,
+      "haceMin": 62
+    },
+    {
+      "sensorId": 2,
+      "pesoKg": 3.68,
+      "haceMin": 18
+    },
+    {
+      "sensorId": 2,
+      "pesoKg": 3.68,
+      "haceMin": 48
+    },
+    {
+      "sensorId": 3,
+      "pesoKg": 12.36,
+      "haceMin": 1
+    },
+    {
+      "sensorId": 3,
+      "pesoKg": 14.42,
+      "haceMin": 31
     }
   ],
   "proveedores": [
     {
       "id": 1,
       "nombre": "Fresh Foods Co.",
-      "correo": "ventas@freshfoods.pe",
-      "telefono": "+51 999 111 222"
+      "correo": "orders@freshfoods.pe",
+      "telefono": "+51 999 123 456"
     }
   ],
   "compras": [
     {
       "id": "PO-00031",
       "proveedorId": 1,
-      "fecha": "2024-03-01",
+      "fecha": "@today",
       "estado": "PENDING",
       "total": 133.0,
+      "restockingNeedId": null,
       "items": [
         {
           "productoId": 1,
@@ -139,7 +188,7 @@
   "ventas": [
     {
       "id": "R-00041",
-      "fecha": "2024-03-01",
+      "fecha": "@today",
       "estado": "COMPLETED",
       "total": 52.1,
       "items": [
@@ -164,11 +213,30 @@
   "movimientos-stock": [
     {
       "id": 1,
+      "productoId": 3,
+      "tipo": "OUT",
+      "origen": "SALE",
+      "origenId": "R-00041",
+      "cantidad": 3,
+      "fecha": "@today"
+    },
+    {
+      "id": 2,
       "productoId": 1,
       "tipo": "OUT",
+      "origen": "SALE",
+      "origenId": "R-00041",
       "cantidad": 2,
-      "origen": "R-00041",
-      "fecha": "2024-03-01"
+      "fecha": "@today"
+    },
+    {
+      "id": 3,
+      "productoId": 4,
+      "tipo": "OUT",
+      "origen": "SALE",
+      "origenId": "R-00041",
+      "cantidad": 4,
+      "fecha": "@today"
     }
   ],
   "alertas": [
@@ -178,7 +246,10 @@
       "productoId": 1,
       "stockReferencia": 2,
       "fuente": "sensor",
-      "estado": "ACTIVE"
+      "estado": "ACTIVE",
+      "creadaEn": "@now",
+      "resueltaEn": null,
+      "necesidadId": 1
     },
     {
       "id": 2,
@@ -186,7 +257,39 @@
       "productoId": 2,
       "stockReferencia": 4,
       "fuente": "registered",
-      "estado": "ACTIVE"
+      "estado": "ACTIVE",
+      "creadaEn": "@now",
+      "resueltaEn": null,
+      "necesidadId": 2
+    },
+    {
+      "id": 3,
+      "tipo": "DISCREPANCY",
+      "productoId": 3,
+      "stockReferencia": 14,
+      "fuente": "sensor",
+      "estado": "ACTIVE",
+      "creadaEn": "@now",
+      "resueltaEn": null,
+      "stockRegistrado": 14,
+      "stockFisico": 12,
+      "diferenciaPct": -14.3
+    }
+  ],
+  "necesidades-reposicion": [
+    {
+      "id": 1,
+      "productoId": 1,
+      "alertaId": 1,
+      "estado": "PENDING",
+      "compraId": null
+    },
+    {
+      "id": 2,
+      "productoId": 2,
+      "alertaId": 2,
+      "estado": "PENDING",
+      "compraId": null
     }
   ],
   "canales-notificacion": [
@@ -202,5 +305,6 @@
       "destino": "+51 987 654 321",
       "activo": true
     }
-  ]
+  ],
+  "notificaciones-enviadas": []
 }
