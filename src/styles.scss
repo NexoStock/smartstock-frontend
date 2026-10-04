@@ -2,6 +2,23 @@
 
 html, body { height: 100%; margin: 0; }
 body { font-family: Roboto, system-ui, sans-serif; background: var(--ss-page-bg); color: var(--mat-sys-on-surface); }
+a { color: var(--mat-sys-primary); }
 h1 { font-size: 1.5rem; margin: 0 0 0.5rem; font-weight: 500; }
 :focus-visible { outline: 3px solid var(--mat-sys-primary); outline-offset: 2px; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Shared form and layout classes (PR0). Views use these instead of writing their own CSS. */
+.ss-card { background: var(--ss-card-bg); border: 1px solid var(--ss-border); border-radius: 0.9rem; padding: 1.25rem; margin-bottom: 1rem; }
+.ss-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-bottom: 1rem; }
+.ss-input { width: 100%; box-sizing: border-box; padding: 0.6rem 0.75rem; border: 1px solid var(--ss-border); border-radius: 0.6rem; font: inherit; background: var(--ss-card-bg); color: inherit; }
+.ss-input[aria-invalid='true'] { border-color: var(--ss-danger); }
+.ss-input:disabled { background: #eef2f7; color: var(--ss-muted); }
+.ss-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: flex-end; margin-top: 1rem; }
+.ss-form { max-width: 640px; }
+.ss-form-grid { display: grid; gap: 0 1rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.ss-table { width: 100%; border-collapse: collapse; background: var(--ss-card-bg); border: 1px solid var(--ss-border); border-radius: 0.9rem; overflow: hidden; }
+.ss-table th { text-align: left; font-size: 0.75rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ss-muted); padding: 0.75rem 1rem; border-bottom: 1px solid var(--ss-border); }
+.ss-table td { padding: 0.75rem 1rem; border-bottom: 1px solid var(--ss-border); }
+.ss-table tr:last-child td { border-bottom: 0; }
+.ss-muted { color: var(--ss-muted); }
+.ss-note { color: var(--ss-muted); font-size: 0.85rem; }

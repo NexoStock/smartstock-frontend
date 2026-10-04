@@ -1,11 +1,12 @@
 import { Component, computed, input } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 
-// status: pending | received | cancelled | completed | online | disconnected | available | lowStock | healthy | noData | discrepancy
+// status: pending | received | cancelled | completed | online | disconnected | available | notLinked | lowStock | healthy | noData | discrepancy | match | registeredOnly | active | resolved | inProgress
 const TONE: Record<string, 'success' | 'danger' | 'warn' | 'neutral'> = {
   pending: 'warn', received: 'success', cancelled: 'neutral', completed: 'success',
   online: 'success', disconnected: 'danger', available: 'neutral',
   lowStock: 'danger', healthy: 'success', noData: 'neutral', discrepancy: 'warn',
+  notLinked: 'neutral', match: 'success', registeredOnly: 'neutral', active: 'danger', resolved: 'success', inProgress: 'warn',
 };
 
 @Component({

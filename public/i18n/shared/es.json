@@ -1,0 +1,70 @@
+{
+  "shared": {
+    "language": "Idioma",
+    "notifications": "Alertas",
+    "menuToggle": "Abrir o cerrar el menú",
+    "skipToContent": "Saltar al contenido",
+    "loading": "Cargando…",
+    "error": "Algo salió mal. Inténtalo de nuevo.",
+    "retry": "Reintentar",
+    "dateRange": "Rango de fechas",
+    "search": "Buscar",
+    "empty": "Todavía no hay nada que mostrar.",
+    "account": "Cuenta",
+    "footer": "SmartStock · Inventario real, siempre visible",
+    "menu": {
+      "dashboard": "Panel",
+      "home": "Inicio",
+      "products": "Productos",
+      "sales": "Ventas",
+      "purchases": "Compras",
+      "sensors": "Sensores",
+      "alerts": "Alertas",
+      "comparison": "Comparación",
+      "reports": "Reportes",
+      "settings": "Configuración",
+      "signOut": "Cerrar sesión"
+    },
+    "status": {
+      "pending": "Pendiente",
+      "received": "Recibida",
+      "cancelled": "Cancelada",
+      "completed": "Completada",
+      "online": "En línea",
+      "disconnected": "Desconectado",
+      "available": "Disponible",
+      "lowStock": "Stock bajo",
+      "healthy": "Normal",
+      "noData": "Sin datos",
+      "discrepancy": "Discrepancia",
+      "notLinked": "Sin vincular",
+      "match": "Coincide",
+      "registeredOnly": "Solo registrado",
+      "active": "Activa",
+      "resolved": "Resuelta",
+      "inProgress": "En curso"
+    },
+    "placeholder": {
+      "pending": "Pantalla pendiente de implementar",
+      "stories": "Historias de usuario",
+      "mockups": "Wireframes y mockups",
+      "context": "Contexto",
+      "hint": "Reemplaza esta vista por la pantalla real. Conserva los estados de carga, vacío y error, las traducciones, las etiquetas ARIA y Money."
+    },
+    "notFound": {
+      "title": "Página no encontrada",
+      "text": "La página que buscas no existe.",
+      "back": "Ir al panel"
+    },
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "back": "Volver",
+    "details": "Detalle",
+    "minutesAgo": "hace {{count}} min",
+    "units": "unidades",
+    "unit": "unidad",
+    "noSensor": "Sin vincular",
+    "money": "Monto",
+    "networkError": "No se pudo conectar con el servidor. Revisa tu conexión."
+  }
+}
