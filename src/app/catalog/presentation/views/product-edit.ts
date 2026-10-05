@@ -10,6 +10,8 @@ import { PageHeader } from '../../../shared/presentation/components/page-header'
 import { CatalogStore } from '../../application/catalog.store';
 import { Product } from '../../domain/model/product.entity';
 
+// US14 · M19 edit product.
+// The registered stock is shown but never edited (R17).
 @Component({
   selector: 'app-product-edit',
   imports: [
@@ -104,7 +106,6 @@ import { Product } from '../../domain/model/product.entity';
                 class="ss-input"
                 type="number"
                 formControlName="registeredStock"
-                disabled
                 aria-describedby="stock-help"
               />
             </app-form-field>
@@ -118,8 +119,8 @@ import { Product } from '../../domain/model/product.entity';
                 id="minThreshold"
                 class="ss-input"
                 type="number"
-                min="1"
                 step="1"
+                min="1"
                 formControlName="minThreshold"
                 [attr.aria-invalid]="!!err('minThreshold')"
                 [attr.aria-describedby]="err('minThreshold') ? 'minThreshold-error' : null"
@@ -151,30 +152,45 @@ import { Product } from '../../domain/model/product.entity';
 })
 export class ProductEdit implements OnInit {
   protected readonly store = inject(CatalogStore);
+
   private readonly router = inject(Router);
+
   private readonly translate = inject(TranslateService);
 
   readonly id = input.required<string>();
 
   protected readonly failed = signal(false);
 
+  private readonly submitted = signal(false);
+
   protected readonly form = new FormGroup({
     name: new FormControl('', {
       nonNullable: true,
       validators: [Validators.required],
     }),
+
     sku: new FormControl('', {
       nonNullable: true,
     }),
+
     salePrice: new FormControl<number | null>(null),
+
     purchaseCost: new FormControl<number | null>(null),
+
     usualSupplier: new FormControl('', {
       nonNullable: true,
     }),
-    registeredStock: new FormControl({
-      value: 0,
-      disabled: true,
-    }),
+
+    registeredStock: new FormControl(
+      {
+        value: 0,
+        disabled: true,
+      },
+      {
+        nonNullable: true,
+      },
+    ),
+
     minThreshold: new FormControl<number | null>(null, {
       validators: [Validators.required, Validators.min(1)],
     }),
@@ -184,16 +200,24 @@ export class ProductEdit implements OnInit {
     effect(() => {
       const product = this.store.current();
 
-      if (!product) return;
+      if (!product) {
+        return;
+      }
 
       untracked(() => {
-        this.form.patchValue({
+        this.form.setValue({
           name: product.name,
+
           sku: product.sku,
+
           salePrice: product.salePrice,
+
           purchaseCost: product.purchaseCost,
+
           usualSupplier: product.usualSupplier,
+
           registeredStock: product.registeredStock,
+
           minThreshold: product.minThreshold,
         });
       });
@@ -205,47 +229,52 @@ export class ProductEdit implements OnInit {
   }
 
   protected err(field: 'name' | 'minThreshold'): string {
-    const control = this.form.controls[field];
-
-    if (!control.invalid || !(control.touched || control.dirty)) {
-      return '';
-    }
-
-    return this.translate.instant(`catalog.error.${field}`);
+    return this.submitted() && this.form.controls[field].invalid
+      ? this.translate.instant(`catalog.error.${field}`)
+      : '';
   }
 
   protected submit(): void {
+    this.submitted.set(true);
     this.failed.set(false);
-    this.form.markAllAsTouched();
-
-    if (this.form.invalid) return;
 
     const current = this.store.current();
 
-    if (!current) return;
+    if (this.form.invalid || !current) {
+      return;
+    }
 
     const value = this.form.getRawValue();
 
     const updated = new Product(
       current.id,
-      value.name,
-      value.sku,
+
+      value.name.trim(),
+
+      value.sku.trim(),
+
       current.category,
+
       current.unitWeight,
-      value.salePrice,
-      value.purchaseCost ?? 0,
-      value.usualSupplier,
+
+      value.salePrice === null ? null : Number(value.salePrice),
+
+      Number(value.purchaseCost ?? 0),
+
+      value.usualSupplier.trim(),
+
       current.registeredStock,
-      value.minThreshold ?? current.minThreshold,
+
+      Number(value.minThreshold),
+
       current.maxCapacity,
+
       current.sensorId,
-      current.sensorStatus,
-      current.sensorUnits,
     );
 
-    this.store.update(updated).subscribe((result) => {
+    this.store.update(this.id(), updated).subscribe((result) => {
       if (result.ok) {
-        this.router.navigate(['/products', current.id]);
+        this.router.navigateByUrl('/products');
       } else {
         this.failed.set(true);
       }
