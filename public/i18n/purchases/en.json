@@ -1,1 +1,71 @@
-{}
+{
+  "inventory": {
+    "purchaseList": {
+      "title": "Purchases",
+      "new": "New purchase",
+      "suppliers": "Suppliers",
+      "period": "Purchases this period",
+      "date": "Date",
+      "supplier": "Supplier",
+      "status": "Status",
+      "items": "Items",
+      "total": "Total",
+      "receipt": "Receipt",
+      "showing": "Showing {{count}} purchases",
+      "emptyTitle": "No purchases in this period.",
+      "emptyText": "Try another date range or create a new purchase."
+    },
+    "purchaseNew": {
+      "title": "New purchase",
+      "fromAlert": "From low stock alert",
+      "supplier": "Supplier",
+      "chooseSupplier": "Choose a supplier",
+      "newSupplier": "Need a new supplier?",
+      "date": "Date",
+      "products": "Products",
+      "product": "Product",
+      "chooseProduct": "Choose a product",
+      "qty": "Quantity",
+      "unitCost": "Unit cost",
+      "remove": "Remove product",
+      "noProducts": "No products added yet",
+      "add": "Add product",
+      "total": "Total",
+      "register": "Register purchase",
+      "errorEmpty": "Add at least one product",
+      "errorSupplier": "Choose a supplier.",
+      "errorQuantity": "Enter a whole quantity of 1 or more."
+    },
+    "purchaseDetails": {
+      "title": "Purchase details",
+      "back": "Back to purchases",
+      "purchase": "Purchase",
+      "supplier": "Supplier",
+      "markReceived": "Mark as received",
+      "movements": "Stock movements",
+      "noMovements": "No stock movements yet",
+      "noMovementsHelp": "Movements will appear after receiving the purchase.",
+      "receiveFailed": "The purchase could not be marked as received. Try again."
+    },
+    "supplierList": {
+      "title": "Suppliers",
+      "back": "Back to purchases",
+      "new": "New supplier",
+      "formTitle": "New supplier",
+      "supplier": "Supplier",
+      "contact": "Contact",
+      "name": "Supplier name",
+      "email": "Email",
+      "phone": "Phone",
+      "save": "Save supplier",
+      "saved": "Supplier saved: {{name}}",
+      "duplicate": "This supplier already exists",
+      "empty": "No suppliers yet.",
+      "error": {
+        "name": "Enter the supplier name.",
+        "email": "Enter a valid email.",
+        "phone": "Enter a valid phone number."
+      }
+    }
+  }
+}
