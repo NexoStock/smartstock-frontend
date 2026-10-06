@@ -16,14 +16,14 @@ export class AnalyticsApi extends BaseApi {
 
   dashboard(): Observable<DashboardSummary> {
     return this.http
-      .get<DashboardResource>(`this.baseUrl{environment.endpoints.dashboard}`)
+      .get<DashboardResource>(`${this.baseUrl}${environment.endpoints.dashboard}`)
       .pipe(map((r) => this.assembler.toDashboard(r)));
   }
 
   report(range: DateRange): Observable<Report> {
     const params = new HttpParams({ fromObject: toQuery(range) });
     return this.http
-      .get<ReportResource>(`this.baseUrl{environment.endpoints.reports}`, { params })
+      .get<ReportResource>(`${this.baseUrl}${environment.endpoints.reports}`, { params })
       .pipe(map((r) => this.assembler.toReport(r)));
   }
 }
