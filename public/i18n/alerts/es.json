@@ -1,1 +1,28 @@
-{}
+{
+  "alerts": {
+    "alertList": {
+      "title": "Alertas",
+      "active": "Alertas activas",
+      "dismiss": "Cerrar",
+      "resolved": "Alerta resuelta · {{name}} ahora tiene {{stock}} unidades, por encima del umbral mínimo de {{threshold}}.",
+      "reference": "Stock de referencia: {{count}} unidades",
+      "sensorUpdated": "Sensor en línea actualizado hace {{count}} min",
+      "registeredUsed": "Se usó el stock registrado",
+      "discrepancy": "Registrado {{registered}} unidades · Sensor {{physical}} unidades · Diferencia {{diff}}% (mayor al 10%)",
+      "registerPurchase": "Registrar compra",
+      "viewComparison": "Ver comparación",
+      "empty": "No hay alertas activas."
+    },
+    "notificationSettings": {
+      "title": "Configuración de notificaciones",
+      "heading": "Alertas de stock bajo y discrepancia",
+      "text": "Elige por dónde te avisa SmartStock cuando se genera una alerta.",
+      "email": "Correo electrónico",
+      "whatsapp": "WhatsApp",
+      "hint": "Deja al menos un canal activo para recibir alertas.",
+      "atLeastOne": "Deja al menos un canal activo para recibir alertas.",
+      "save": "Guardar cambios",
+      "saved": "Preferencias de notificación guardadas."
+    }
+  }
+}
