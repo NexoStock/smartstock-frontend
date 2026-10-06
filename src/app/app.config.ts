@@ -22,7 +22,7 @@ export const appConfig: ApplicationConfig = {
     provideNativeDateAdapter(),
     provideTranslateService({
       loader: provideTranslateMultiHttpLoader({
-        resources: i18nContexts.map((context) => ({ prefix: `/i18n/${context}/`, suffix: '.json' })),
+        resources: i18nContexts.map((context) => ({ prefix: `i18n/${context}/`, suffix: '.json' })),
       }),
       fallbackLang: 'en',
       lang: stored === 'es' ? 'es' : 'en',
