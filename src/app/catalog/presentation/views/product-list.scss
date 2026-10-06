@@ -1,3 +1,2 @@
-.hint { color: var(--ss-muted); }
-.error { color: var(--ss-danger); }
-table { width: 100%; }
+.filters { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem; }
+.field { min-width: 220px; }
