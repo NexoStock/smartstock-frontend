@@ -1,12 +1,29 @@
 <app-auth-layout>
   <h1>{{ 'iam.signIn.title' | translate }}</h1>
-  <p>US02 · M20, M21</p>
-  <section class="dev-box" aria-labelledby="dev-title">
-    <h2 id="dev-title">{{ 'iam.devSignIn.title' | translate }}</h2>
-    <p>{{ 'iam.devSignIn.text' | translate }}</p>
-    <div class="dev-actions">
-      <button mat-flat-button type="button" (click)="enterAs('minimarket')">{{ 'iam.devSignIn.minimarket' | translate }}</button>
-      <button mat-stroked-button type="button" (click)="enterAs('bodega')">{{ 'iam.devSignIn.bodega' | translate }}</button>
-    </div>
-  </section>
+  <p class="ss-muted">{{ 'iam.signIn.subtitle' | translate }}</p>
+
+  @if (failed()) {
+    <app-alert-banner tone="error">{{ 'iam.signIn.invalid' | translate }}</app-alert-banner>
+  }
+
+  <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+    <app-form-field [id]="'email'" [label]="'iam.field.email' | translate" [error]="fieldError('email')">
+      <input id="email" class="ss-input" type="email" autocomplete="username" formControlName="email"
+             [attr.aria-invalid]="!!fieldError('email')" [attr.aria-describedby]="fieldError('email') ? 'email-error' : null" />
+    </app-form-field>
+
+    <app-form-field [id]="'password'" [label]="'iam.field.password' | translate" [error]="fieldError('password')">
+      <input id="password" class="ss-input" type="password" autocomplete="current-password" formControlName="password"
+             [attr.aria-invalid]="!!fieldError('password')" [attr.aria-describedby]="fieldError('password') ? 'password-error' : null" />
+    </app-form-field>
+
+    <a class="forgot" routerLink="/forgot-password">{{ 'iam.signIn.forgot' | translate }}</a>
+
+    <button mat-flat-button type="submit" class="full" [disabled]="store.loading()">{{ 'iam.signIn.submit' | translate }}</button>
+  </form>
+
+  <p class="switch">
+    {{ 'iam.signIn.new' | translate }}
+    <a routerLink="/sign-up">{{ 'iam.signIn.create' | translate }}</a>
+  </p>
 </app-auth-layout>
