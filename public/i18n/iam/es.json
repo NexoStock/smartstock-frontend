@@ -1,1 +1,51 @@
-{}
+{
+  "iam": {
+    "field": {
+      "email": "Correo electrónico",
+      "password": "Contraseña",
+      "businessName": "Nombre del negocio",
+      "businessType": "Tipo de negocio"
+    },
+    "error": {
+      "email": "Ingresa un correo válido.",
+      "password": "Ingresa tu contraseña (mínimo 8 caracteres al registrarte).",
+      "businessName": "Ingresa el nombre de tu negocio."
+    },
+    "businessType": {
+      "minimarket": "Minimarket",
+      "bodega": "Bodega"
+    },
+    "signIn": {
+      "title": "Iniciar sesión",
+      "subtitle": "Accede al panel de tu inventario.",
+      "invalid": "Correo o contraseña incorrectos.",
+      "invalidField": "Las credenciales son incorrectas.",
+      "forgot": "¿Olvidaste tu contraseña?",
+      "submit": "Iniciar sesión",
+      "new": "¿Eres nuevo en SmartStock?",
+      "create": "Crear cuenta"
+    },
+    "signUp": {
+      "title": "Crea tu cuenta",
+      "subtitle": "Registra tu negocio para empezar a monitorear tu stock.",
+      "submit": "Crear cuenta",
+      "have": "¿Ya tienes una cuenta?",
+      "signIn": "Iniciar sesión",
+      "emailTaken": "Este correo ya está registrado.",
+      "successTitle": "Cuenta creada",
+      "successText": "Enviamos un correo de confirmación a",
+      "menuReady": "Tu menú está configurado para este tipo de negocio.",
+      "goDashboard": "Ir al panel"
+    },
+    "forgotPassword": {
+      "title": "Recupera tu contraseña",
+      "subtitle": "Ingresa el correo de tu cuenta y te enviaremos un enlace para restablecerla.",
+      "submit": "Enviar enlace",
+      "back": "Volver a iniciar sesión",
+      "sentTitle": "Revisa tu correo",
+      "sentText": "Enviamos un enlace de restablecimiento a",
+      "expires": "El enlace vence en 24 horas.",
+      "resend": "Reenviar enlace"
+    }
+  }
+}
