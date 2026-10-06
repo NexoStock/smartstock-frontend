@@ -1,0 +1,35 @@
+{
+  "analytics": {
+    "dashboard": {
+      "title": "Panel",
+      "salesToday": "Ventas de hoy",
+      "purchasesToday": "Compras de hoy",
+      "lowStockAlerts": "Alertas de stock bajo",
+      "needsAttention": "Requieren atención",
+      "saleOne": "{{count}} venta",
+      "saleMany": "{{count}} ventas",
+      "purchaseOne": "{{count}} compra",
+      "purchaseMany": "{{count}} compras",
+      "recent": "Actividad reciente",
+      "sale": "Venta",
+      "purchase": "Compra",
+      "noActivity": "Hoy no hay ventas ni compras.",
+      "stockOverview": "Resumen de stock",
+      "noProducts": "Todavía no hay productos."
+    },
+    "reports": {
+      "title": "Reportes",
+      "sales": "Ventas",
+      "purchases": "Compras",
+      "movements": "Movimientos de stock",
+      "summary": "Resumen de movimientos",
+      "type": "Tipo",
+      "product": "Producto",
+      "quantity": "Cantidad",
+      "source": "Origen",
+      "date": "Fecha",
+      "empty": "No hay movimientos de stock en este periodo.",
+      "pending": "{{id}} sigue Pendiente, por eso aún no genera un movimiento de stock IN."
+    }
+  }
+}

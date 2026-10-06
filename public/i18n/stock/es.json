@@ -1,0 +1,57 @@
+{
+  "inventory": {
+    "comparison": {
+      "title": "Comparación",
+      "differsOne": "{{count}} producto difiere más del 10%. Se generó una alerta y se envió a tus canales.",
+      "differsMany": "{{count}} productos difieren más del 10%. Se generó una alerta y se envió a tus canales.",
+      "viewAlert": "Ver alerta",
+      "product": "Producto",
+      "registered": "Stock registrado",
+      "physical": "Físico (sensor)",
+      "difference": "Diferencia",
+      "result": "Resultado",
+      "noReading": "Sin lectura reciente",
+      "empty": "Todavía no hay productos para comparar.",
+      "formula": "Diferencia = (físico − registrado) ÷ registrado. El stock registrado se actualiza con compras recibidas, ventas y ajustes.",
+      "registeredOnlyNote": "Los productos sin sensor en línea se comparan solo con el stock registrado."
+    }
+  },
+  "catalog": {
+    "list": {
+      "sensor": "Sensor",
+      "name": "Producto",
+      "category": "Categoría",
+      "stock": "Stock registrado",
+      "level": "Nivel de stock",
+      "empty": "Todavía no hay productos."
+    },
+    "productList": {
+      "title": "Productos",
+      "new": "Nuevo producto",
+      "search": "Buscar por nombre o SKU",
+      "searchLabel": "Buscar productos",
+      "level": "Nivel de stock",
+      "levelAll": "Nivel de stock: Todos",
+      "note": "El nivel de stock usa el sensor en línea cuando existe; si no, el stock registrado.",
+      "showing": "Mostrando {{shown}} de {{total}} productos."
+    },
+    "productDetails": {
+      "title": "Detalle del producto",
+      "back": "Volver a productos",
+      "edit": "Editar producto",
+      "maxCapacity": "Capacidad máxima",
+      "notSet": "Sin definir",
+      "sensorReading": "Lectura del sensor",
+      "perUnit": "a {{weight}} kg por unidad",
+      "lastReading": "Última lectura:",
+      "alertReference": "Stock de referencia de la alerta:",
+      "referenceSensor": "sensor (en línea)",
+      "referenceRegistered": "stock registrado",
+      "configure": "Configurar umbral",
+      "viewSensor": "Ver sensor",
+      "noSensor": "Este producto no tiene un sensor vinculado.",
+      "linkSensor": "Vincular sensor",
+      "recent": "Lecturas recientes"
+    }
+  }
+}

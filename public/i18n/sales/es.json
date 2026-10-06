@@ -1,0 +1,43 @@
+{
+  "inventory": {
+    "saleList": {
+      "title": "Ventas",
+      "new": "Nueva venta",
+      "period": "Ventas del periodo",
+      "receipt": "Comprobante",
+      "date": "Fecha",
+      "items": "Ítems",
+      "total": "Total",
+      "emptyTitle": "No hay ventas en este periodo.",
+      "emptyText": "Prueba otro rango de fechas o registra una nueva venta."
+    },
+    "saleNew": {
+      "title": "Nueva venta",
+      "items": "Ítems de la venta",
+      "errorEmpty": "Agrega al menos un producto.",
+      "errorQuantity": "Ingresa una cantidad entera de 1 o más.",
+      "errorStock": "Stock insuficiente para {{name}}. Stock disponible: {{available}} unidades.",
+      "errorPrice": "{{name}} no tiene precio de venta",
+      "errorPriceHelp": "Configura el precio en el catálogo de productos antes de venderlo.",
+      "openCatalog": "Abrir catálogo",
+      "product": "Producto",
+      "choose": "Elige un producto",
+      "qty": "Cantidad",
+      "price": "Precio",
+      "priceNotSet": "Precio sin definir",
+      "stock": "Stock: {{count}} unidades",
+      "remove": "Quitar producto",
+      "add": "Agregar producto",
+      "total": "Total",
+      "register": "Registrar venta"
+    },
+    "saleDetails": {
+      "title": "Detalle de la venta",
+      "back": "Volver a ventas",
+      "sale": "Venta",
+      "products": "Productos",
+      "movements": "Movimientos de stock",
+      "noMovements": "Sin movimientos de stock."
+    }
+  }
+}

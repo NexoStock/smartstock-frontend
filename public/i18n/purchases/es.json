@@ -1,0 +1,71 @@
+{
+  "inventory": {
+    "purchaseList": {
+      "title": "Compras",
+      "new": "Nueva compra",
+      "suppliers": "Proveedores",
+      "period": "Compras del periodo",
+      "date": "Fecha",
+      "supplier": "Proveedor",
+      "status": "Estado",
+      "items": "Ítems",
+      "total": "Total",
+      "receipt": "Comprobante",
+      "showing": "Mostrando {{count}} compras",
+      "emptyTitle": "No hay compras en este periodo.",
+      "emptyText": "Prueba otro rango de fechas o crea una nueva compra."
+    },
+    "purchaseNew": {
+      "title": "Nueva compra",
+      "fromAlert": "Desde una alerta de stock bajo",
+      "supplier": "Proveedor",
+      "chooseSupplier": "Elige un proveedor",
+      "newSupplier": "¿Necesitas un proveedor nuevo?",
+      "date": "Fecha",
+      "products": "Productos",
+      "product": "Producto",
+      "chooseProduct": "Elige un producto",
+      "qty": "Cantidad",
+      "unitCost": "Costo unitario",
+      "remove": "Quitar producto",
+      "noProducts": "Aún no agregaste productos",
+      "add": "Agregar producto",
+      "total": "Total",
+      "register": "Registrar compra",
+      "errorEmpty": "Agrega al menos un producto",
+      "errorSupplier": "Elige un proveedor.",
+      "errorQuantity": "Ingresa una cantidad entera de 1 o más."
+    },
+    "purchaseDetails": {
+      "title": "Detalle de la compra",
+      "back": "Volver a compras",
+      "purchase": "Compra",
+      "supplier": "Proveedor",
+      "markReceived": "Marcar como recibida",
+      "movements": "Movimientos de stock",
+      "noMovements": "Aún no hay movimientos de stock",
+      "noMovementsHelp": "Los movimientos aparecerán al recibir la compra.",
+      "receiveFailed": "No se pudo marcar la compra como recibida. Inténtalo de nuevo."
+    },
+    "supplierList": {
+      "title": "Proveedores",
+      "back": "Volver a compras",
+      "new": "Nuevo proveedor",
+      "formTitle": "Nuevo proveedor",
+      "supplier": "Proveedor",
+      "contact": "Contacto",
+      "name": "Nombre del proveedor",
+      "email": "Correo",
+      "phone": "Teléfono",
+      "save": "Guardar proveedor",
+      "saved": "Proveedor guardado: {{name}}",
+      "duplicate": "Este proveedor ya existe",
+      "empty": "Todavía no hay proveedores.",
+      "error": {
+        "name": "Ingresa el nombre del proveedor.",
+        "email": "Ingresa un correo válido.",
+        "phone": "Ingresa un teléfono válido."
+      }
+    }
+  }
+}

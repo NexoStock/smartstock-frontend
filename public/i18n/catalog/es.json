@@ -1,0 +1,45 @@
+{
+  "catalog": {
+    "field": {
+      "name": "Nombre del producto",
+      "namePlaceholder": "Ej. Arroz 1 kg",
+      "sku": "SKU",
+      "category": "Categoría",
+      "unitWeight": "Peso unitario (kg)",
+      "salePrice": "Precio de venta (S/)",
+      "purchaseCost": "Costo de compra (S/)",
+      "usualSupplier": "Proveedor habitual",
+      "initialStock": "Stock inicial",
+      "minThreshold": "Umbral mínimo",
+      "registeredStock": "Stock registrado"
+    },
+    "error": {
+      "name": "Ingresa el nombre del producto.",
+      "category": "Elige o escribe una categoría.",
+      "unitWeight": "Ingresa un peso unitario mayor a 0.",
+      "minThreshold": "Ingresa un umbral mínimo mayor a 0 (y que no supere la capacidad máxima)."
+    },
+    "productNew": {
+      "title": "Nuevo producto",
+      "review": "Revisa los campos resaltados antes de guardar.",
+      "note": "El producto se agrega al catálogo y queda disponible para vincularlo a un sensor.",
+      "save": "Guardar producto"
+    },
+    "productEdit": {
+      "title": "Editar producto",
+      "failed": "No se pudo guardar el producto. Revisa los datos e inténtalo de nuevo.",
+      "stockHelp": "El stock registrado solo cambia con compras, ventas y ajustes.",
+      "note": "Los precios y el proveedor se usan en compras, ventas y flujos de stock bajo."
+    },
+    "sensorThreshold": {
+      "title": "Umbral mínimo de stock",
+      "product": "Producto",
+      "maxCapacity": "Capacidad máxima",
+      "field": "Umbral mínimo (unidades)",
+      "help": "Ingresa un valor mayor a 0 y hasta {{max}} unidades. Se crea una alerta cuando el stock llega a este nivel.",
+      "bannerExceeds": "El umbral supera la capacidad máxima.",
+      "exceeds": "El umbral no puede superar la capacidad máxima ({{max}} unidades).",
+      "save": "Guardar umbral"
+    }
+  }
+}

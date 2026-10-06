@@ -1,0 +1,43 @@
+{
+  "inventory": {
+    "saleList": {
+      "title": "Sales",
+      "new": "New sale",
+      "period": "Sales this period",
+      "receipt": "Receipt",
+      "date": "Date",
+      "items": "Items",
+      "total": "Total",
+      "emptyTitle": "No sales in this period.",
+      "emptyText": "Try another date range or register a new sale."
+    },
+    "saleNew": {
+      "title": "New sale",
+      "items": "Sale items",
+      "errorEmpty": "Add at least one product.",
+      "errorQuantity": "Enter a whole quantity of 1 or more.",
+      "errorStock": "Insufficient stock for {{name}}. Available stock: {{available}} units.",
+      "errorPrice": "{{name}} has no sale price",
+      "errorPriceHelp": "Configure the price in the product catalog before selling it.",
+      "openCatalog": "Open catalog",
+      "product": "Product",
+      "choose": "Choose a product",
+      "qty": "Quantity",
+      "price": "Price",
+      "priceNotSet": "Price not set",
+      "stock": "Stock: {{count}} units",
+      "remove": "Remove product",
+      "add": "Add product",
+      "total": "Total",
+      "register": "Register sale"
+    },
+    "saleDetails": {
+      "title": "Sale details",
+      "back": "Back to sales",
+      "sale": "Sale",
+      "products": "Products",
+      "movements": "Stock movements",
+      "noMovements": "No stock movements."
+    }
+  }
+}

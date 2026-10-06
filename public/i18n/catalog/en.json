@@ -1,0 +1,45 @@
+{
+  "catalog": {
+    "field": {
+      "name": "Product name",
+      "namePlaceholder": "e.g. Rice 1 kg",
+      "sku": "SKU",
+      "category": "Category",
+      "unitWeight": "Unit weight (kg)",
+      "salePrice": "Sale price (S/)",
+      "purchaseCost": "Purchase cost (S/)",
+      "usualSupplier": "Usual supplier",
+      "initialStock": "Initial stock",
+      "minThreshold": "Minimum threshold",
+      "registeredStock": "Registered stock"
+    },
+    "error": {
+      "name": "Enter the product name.",
+      "category": "Choose or type a category.",
+      "unitWeight": "Enter a unit weight greater than 0.",
+      "minThreshold": "Enter a minimum threshold greater than 0 (and not above the maximum capacity)."
+    },
+    "productNew": {
+      "title": "New product",
+      "review": "Review the highlighted fields before saving.",
+      "note": "The product is added to the catalog and becomes available to link with a sensor.",
+      "save": "Save product"
+    },
+    "productEdit": {
+      "title": "Edit product",
+      "failed": "The product could not be saved. Review the data and try again.",
+      "stockHelp": "The registered stock changes only with purchases, sales and adjustments.",
+      "note": "Pricing and supplier information is used in purchases, sales, and low-stock workflows."
+    },
+    "sensorThreshold": {
+      "title": "Minimum stock threshold",
+      "product": "Product",
+      "maxCapacity": "Maximum capacity",
+      "field": "Minimum threshold (units)",
+      "help": "Enter a value greater than 0 and up to {{max}} units. An alert is created when stock reaches this level.",
+      "bannerExceeds": "The threshold exceeds the maximum capacity.",
+      "exceeds": "The threshold cannot exceed the maximum capacity ({{max}} units).",
+      "save": "Save threshold"
+    }
+  }
+}

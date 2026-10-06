@@ -1,0 +1,35 @@
+{
+  "analytics": {
+    "dashboard": {
+      "title": "Dashboard",
+      "salesToday": "Sales today",
+      "purchasesToday": "Purchases today",
+      "lowStockAlerts": "Low stock alerts",
+      "needsAttention": "Needs attention",
+      "saleOne": "{{count}} sale",
+      "saleMany": "{{count}} sales",
+      "purchaseOne": "{{count}} purchase",
+      "purchaseMany": "{{count}} purchases",
+      "recent": "Recent activity",
+      "sale": "Sale",
+      "purchase": "Purchase",
+      "noActivity": "No sales or purchases today.",
+      "stockOverview": "Stock overview",
+      "noProducts": "No products yet."
+    },
+    "reports": {
+      "title": "Reports",
+      "sales": "Sales",
+      "purchases": "Purchases",
+      "movements": "Stock movements",
+      "summary": "Movement summary",
+      "type": "Type",
+      "product": "Product",
+      "quantity": "Quantity",
+      "source": "Source",
+      "date": "Date",
+      "empty": "There are no stock movements in this period.",
+      "pending": "{{id}} is still Pending, so it does not create an IN stock movement yet."
+    }
+  }
+}

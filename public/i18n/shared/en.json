@@ -1,0 +1,70 @@
+{
+  "shared": {
+    "language": "Language",
+    "notifications": "Alerts",
+    "menuToggle": "Open or close the menu",
+    "skipToContent": "Skip to content",
+    "loading": "Loading…",
+    "error": "Something went wrong. Try again.",
+    "retry": "Retry",
+    "dateRange": "Date range",
+    "search": "Search",
+    "empty": "There is nothing to show yet.",
+    "account": "Account",
+    "footer": "SmartStock · Real inventory, always visible",
+    "menu": {
+      "dashboard": "Dashboard",
+      "home": "Home",
+      "products": "Products",
+      "sales": "Sales",
+      "purchases": "Purchases",
+      "sensors": "Sensors",
+      "alerts": "Alerts",
+      "comparison": "Comparison",
+      "reports": "Reports",
+      "settings": "Settings",
+      "signOut": "Log out"
+    },
+    "status": {
+      "pending": "Pending",
+      "received": "Received",
+      "cancelled": "Cancelled",
+      "completed": "Completed",
+      "online": "Online",
+      "disconnected": "Disconnected",
+      "available": "Available",
+      "lowStock": "Low stock",
+      "healthy": "Healthy",
+      "noData": "No data",
+      "discrepancy": "Discrepancy",
+      "notLinked": "Not linked",
+      "match": "Match",
+      "registeredOnly": "Registered only",
+      "active": "Active",
+      "resolved": "Resolved",
+      "inProgress": "In progress"
+    },
+    "placeholder": {
+      "pending": "Screen pending implementation",
+      "stories": "User stories",
+      "mockups": "Wireframes and mockups",
+      "context": "Context",
+      "hint": "Replace this view with the real screen. Keep loading, empty and error states, translations, ARIA labels and Money."
+    },
+    "notFound": {
+      "title": "Page not found",
+      "text": "The page you are looking for does not exist.",
+      "back": "Go to dashboard"
+    },
+    "cancel": "Cancel",
+    "save": "Save",
+    "back": "Back",
+    "details": "Details",
+    "minutesAgo": "{{count}} min ago",
+    "units": "units",
+    "unit": "unit",
+    "noSensor": "Not linked",
+    "money": "Amount",
+    "networkError": "Could not reach the server. Check your connection."
+  }
+}

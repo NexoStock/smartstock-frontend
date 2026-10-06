@@ -1,0 +1,35 @@
+{
+  "devices": {
+    "sensorList": {
+      "title": "Sensors",
+      "link": "Link sensor",
+      "availableToLink": "Available to link",
+      "sensor": "Sensor",
+      "product": "Product",
+      "status": "Status",
+      "lastReading": "Last reading",
+      "weight": "Current weight",
+      "configure": "Configure",
+      "linkRow": "Link",
+      "note": "A sensor is shown as Online when it sent a reading in the last 5 minutes; otherwise it is Disconnected and may need a technical check.",
+      "empty": "No sensors registered yet."
+    },
+    "sensorLink": {
+      "title": "Link sensor",
+      "sensor": "Sensor",
+      "product": "Product",
+      "chooseSensor": "Choose a sensor",
+      "chooseProduct": "Choose a product",
+      "linkedTo": "Linked to {{name}}",
+      "hasSensor": "has a sensor",
+      "initialReading": "Initial reading detected",
+      "referenceNote": "This weight is saved as the reference weight of the product.",
+      "chooseToRead": "Choose an available sensor to read its initial weight.",
+      "inUse": "This sensor is already in use.",
+      "inUseField": "This sensor is already linked to {{name}}.",
+      "productHasSensor": "This product already has a sensor.",
+      "required": "Choose an option.",
+      "submit": "Link sensor"
+    }
+  }
+}

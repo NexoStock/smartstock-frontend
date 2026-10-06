@@ -1,0 +1,57 @@
+{
+  "inventory": {
+    "comparison": {
+      "title": "Comparison",
+      "differsOne": "{{count}} product differs more than 10%. An alert was generated and sent to your channels.",
+      "differsMany": "{{count}} products differ more than 10%. An alert was generated and sent to your channels.",
+      "viewAlert": "View alert",
+      "product": "Product",
+      "registered": "Registered stock",
+      "physical": "Physical (sensor)",
+      "difference": "Difference",
+      "result": "Result",
+      "noReading": "No recent reading",
+      "empty": "There are no products to compare yet.",
+      "formula": "Difference = (physical − registered) ÷ registered. Registered stock is updated by received purchases, sales and adjustments.",
+      "registeredOnlyNote": "Products without an online sensor are compared using registered stock only."
+    }
+  },
+  "catalog": {
+    "list": {
+      "sensor": "Sensor",
+      "name": "Product",
+      "category": "Category",
+      "stock": "Registered stock",
+      "level": "Stock level",
+      "empty": "No products yet."
+    },
+    "productList": {
+      "title": "Products",
+      "new": "New product",
+      "search": "Search by name or SKU",
+      "searchLabel": "Search products",
+      "level": "Stock level",
+      "levelAll": "Stock level: All",
+      "note": "Stock level uses the online sensor when available; otherwise the registered stock.",
+      "showing": "Showing {{shown}} of {{total}} products."
+    },
+    "productDetails": {
+      "title": "Product details",
+      "back": "Back to products",
+      "edit": "Edit product",
+      "maxCapacity": "Maximum capacity",
+      "notSet": "Not set",
+      "sensorReading": "Sensor reading",
+      "perUnit": "at {{weight}} kg per unit",
+      "lastReading": "Last reading:",
+      "alertReference": "Alert reference stock:",
+      "referenceSensor": "sensor (online)",
+      "referenceRegistered": "registered stock",
+      "configure": "Configure threshold",
+      "viewSensor": "View sensor",
+      "noSensor": "No sensor linked to this product.",
+      "linkSensor": "Link sensor",
+      "recent": "Recent readings"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "iam": {
+    "field": {
+      "email": "Email",
+      "password": "Password",
+      "businessName": "Business name",
+      "businessType": "Business type"
+    },
+    "error": {
+      "email": "Enter a valid email.",
+      "password": "Enter your password (at least 8 characters when registering).",
+      "businessName": "Enter your business name."
+    },
+    "businessType": {
+      "minimarket": "Minimarket",
+      "bodega": "Bodega"
+    },
+    "signIn": {
+      "title": "Sign in",
+      "subtitle": "Access your inventory dashboard.",
+      "invalid": "Incorrect email or password.",
+      "invalidField": "The credentials are incorrect.",
+      "forgot": "Forgot your password?",
+      "submit": "Sign in",
+      "new": "New to SmartStock?",
+      "create": "Create account"
+    },
+    "signUp": {
+      "title": "Create your account",
+      "subtitle": "Register your business to start monitoring stock.",
+      "submit": "Create account",
+      "have": "Already have an account?",
+      "signIn": "Sign in",
+      "emailTaken": "This email is already registered.",
+      "successTitle": "Account created",
+      "successText": "We sent a confirmation email to",
+      "menuReady": "Your menu is set up for this business type.",
+      "goDashboard": "Go to dashboard"
+    },
+    "forgotPassword": {
+      "title": "Recover your password",
+      "subtitle": "Enter the email linked to your account and we will send you a reset link.",
+      "submit": "Send reset link",
+      "back": "Back to sign in",
+      "sentTitle": "Check your email",
+      "sentText": "We sent a reset link to",
+      "expires": "The link expires in 24 hours.",
+      "resend": "Resend link"
+    }
+  }
+}
