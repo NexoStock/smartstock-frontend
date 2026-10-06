@@ -14,14 +14,14 @@ export class StockApi extends BaseApi {
 
   comparison(): Observable<Comparison> {
     return this.http
-      .get<ComparisonResource>(`this.baseUrl{environment.endpoints.comparison}`)
+      .get<ComparisonResource>(`${this.baseUrl}${environment.endpoints.comparison}`)
       .pipe(map((r) => this.assembler.toComparison(r)));
   }
 
   productSensorDetail(productId: number | string): Observable<ProductSensorDetail> {
     return this.http
       .get<ProductDetailResource>(
-        `this.baseUrl{environment.endpoints.products}/${productId}/detalle`,
+        `${this.baseUrl}${environment.endpoints.products}/${productId}/detalle`,
       )
       .pipe(map((r) => this.assembler.toProductSensorDetail(r)));
   }
