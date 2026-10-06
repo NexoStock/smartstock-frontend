@@ -1,1 +1,28 @@
-{}
+{
+  "alerts": {
+    "alertList": {
+      "title": "Alerts",
+      "active": "Active alerts",
+      "dismiss": "Dismiss",
+      "resolved": "Alert resolved · {{name}} now has {{stock}} units, above the minimum threshold of {{threshold}}.",
+      "reference": "Reference stock: {{count}} units",
+      "sensorUpdated": "Online sensor updated {{count}} min ago",
+      "registeredUsed": "Registered stock used",
+      "discrepancy": "Registered {{registered}} units · Sensor {{physical}} units · Difference {{diff}}% (above 10%)",
+      "registerPurchase": "Register purchase",
+      "viewComparison": "View comparison",
+      "empty": "There are no active alerts."
+    },
+    "notificationSettings": {
+      "title": "Notification settings",
+      "heading": "Low-stock and discrepancy alerts",
+      "text": "Choose where SmartStock notifies you when an alert is generated.",
+      "email": "Email",
+      "whatsapp": "WhatsApp",
+      "hint": "At least one channel should stay enabled to receive alerts.",
+      "atLeastOne": "Keep at least one channel enabled to receive alerts.",
+      "save": "Save changes",
+      "saved": "Notification preferences saved."
+    }
+  }
+}
