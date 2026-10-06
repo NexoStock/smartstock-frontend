@@ -1,1 +1,35 @@
-{}
+{
+  "devices": {
+    "sensorList": {
+      "title": "Sensores",
+      "link": "Vincular sensor",
+      "availableToLink": "Disponibles para vincular",
+      "sensor": "Sensor",
+      "product": "Producto",
+      "status": "Estado",
+      "lastReading": "Última lectura",
+      "weight": "Peso actual",
+      "configure": "Configurar",
+      "linkRow": "Vincular",
+      "note": "Un sensor se muestra En línea si envió una lectura en los últimos 5 minutos; si no, está Desconectado y puede necesitar una revisión técnica.",
+      "empty": "Todavía no hay sensores registrados."
+    },
+    "sensorLink": {
+      "title": "Vincular sensor",
+      "sensor": "Sensor",
+      "product": "Producto",
+      "chooseSensor": "Elige un sensor",
+      "chooseProduct": "Elige un producto",
+      "linkedTo": "Vinculado a {{name}}",
+      "hasSensor": "ya tiene sensor",
+      "initialReading": "Lectura inicial detectada",
+      "referenceNote": "Este peso se guarda como peso de referencia del producto.",
+      "chooseToRead": "Elige un sensor disponible para leer su peso inicial.",
+      "inUse": "Este sensor ya está en uso.",
+      "inUseField": "Este sensor ya está vinculado a {{name}}.",
+      "productHasSensor": "Este producto ya tiene un sensor.",
+      "required": "Elige una opción.",
+      "submit": "Vincular sensor"
+    }
+  }
+}
