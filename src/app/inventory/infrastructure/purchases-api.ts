@@ -57,7 +57,7 @@ export class PurchasesApi extends BaseApi {
   }
 
   receive(id: string): Observable<unknown> {
-    return this.http.patch(`${this.url}/${id}/recepcion`, {});
+    return this.http.post(`${this.url}/${id}/recibir`, {});
   }
 
   productOptions(): Observable<PurchaseProductOption[]> {
