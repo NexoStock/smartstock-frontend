@@ -1,4 +1,3 @@
-import { HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { environment } from '../../../environments/environment';
@@ -12,7 +11,6 @@ import { Purchase, PurchaseProductOption, Supplier } from '../domain/model/purch
 import { PurchaseAssembler, SupplierAssembler } from './purchase.assembler';
 
 import {
-  PurchaseListResource,
   PurchaseProductOptionResource,
   PurchaseResource,
   RegisterPurchaseRequest,
@@ -35,15 +33,16 @@ export class PurchasesApi extends BaseApi {
     purchases: Purchase[];
     total: number;
   }> {
-    const params = new HttpParams({
-      fromObject: toQuery(range),
-    });
+    // The backend returns every purchase of the business; the date range is applied here.
+    const { desde, hasta } = toQuery(range);
 
-    return this.http.get<PurchaseListResource>(this.url, { params }).pipe(
-      map((r) => ({
-        purchases: this.assembler.toEntitiesFromResources(r.compras),
-        total: r.total,
-      })),
+    return this.http.get<PurchaseResource[]>(this.url).pipe(
+      map((list) => {
+        const purchases = this.assembler
+          .toEntitiesFromResources(list)
+          .filter((p) => !p.date || ((!desde || p.date >= desde) && (!hasta || p.date.slice(0, 10) <= hasta)));
+        return { purchases, total: purchases.reduce((sum, p) => sum + Number(p.total), 0) };
+      }),
     );
   }
 
@@ -58,7 +57,7 @@ export class PurchasesApi extends BaseApi {
   }
 
   receive(id: string): Observable<unknown> {
-    return this.http.patch(`${this.url}/${id}/recepcion`, {});
+    return this.http.post(`${this.url}/${id}/recibir`, {});
   }
 
   productOptions(): Observable<PurchaseProductOption[]> {

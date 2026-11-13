@@ -1,5 +1,5 @@
 export const environment = {
-  apiBaseUrl: 'https://smartstock-fake-api-angular.onrender.com',
+  apiBaseUrl: 'https://smartstock-backend-production-36b6ce8c.up.railway.app/api',
   endpoints: {
     auth: '/auth',
     products: '/productos',

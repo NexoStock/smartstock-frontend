@@ -40,6 +40,7 @@ export class Supplier extends BaseEntity {
   constructor(
     id: number | null,
     public name: string,
+    public taxId: string,
     public email: string,
     public phone: string,
   ) {
