@@ -78,6 +78,21 @@ import { PurchasesStore } from '../../application/purchases.store';
           </app-form-field>
 
           <app-form-field
+            [id]="'supplier-tax-id'"
+            [label]="'inventory.supplierList.taxId' | translate"
+            [error]="err('taxId')"
+          >
+            <input
+              id="supplier-tax-id"
+              class="ss-input"
+              inputmode="numeric"
+              formControlName="taxId"
+              [attr.aria-invalid]="!!err('taxId')"
+              [attr.aria-describedby]="err('taxId') ? 'supplier-tax-id-error' : null"
+            />
+          </app-form-field>
+
+          <app-form-field
             [id]="'supplier-email'"
             [label]="'inventory.supplierList.email' | translate"
             [error]="err('email')"
@@ -168,6 +183,11 @@ export class SupplierList implements OnInit {
       validators: [Validators.required],
     }),
 
+    taxId: new FormControl('', {
+      nonNullable: true,
+      validators: [Validators.required, Validators.pattern(/^\d{11}$/)],
+    }),
+
     email: new FormControl('', {
       nonNullable: true,
       validators: [Validators.required, Validators.email],
@@ -183,7 +203,7 @@ export class SupplierList implements OnInit {
     this.store.fetchSuppliers();
   }
 
-  protected err(field: 'name' | 'email' | 'phone'): string {
+  protected err(field: 'name' | 'taxId' | 'email' | 'phone'): string {
     const control = this.form.controls[field];
 
     return control.invalid && (control.touched || control.dirty)
@@ -210,15 +230,15 @@ export class SupplierList implements OnInit {
 
     if (this.form.invalid) return;
 
-    const { name, email, phone } = this.form.getRawValue();
+    const { name, taxId, email, phone } = this.form.getRawValue();
 
-    this.store.createSupplier(name.trim(), email.trim(), phone.trim()).subscribe((result) => {
+    this.store.createSupplier(name.trim(), taxId.trim(), email.trim(), phone.trim()).subscribe((result) => {
       if (result.ok) {
         this.savedName.set(result.value.name);
 
         this.closeForm();
         this.store.fetchSuppliers();
-      } else if (result.error.code === 'DUPLICATE_SUPPLIER') {
+      } else if (['DUPLICATE_SUPPLIER', 'SUPPLIER_TAX_ID_ALREADY_EXISTS'].includes(result.error.code ?? '')) {
         this.duplicate.set(true);
       } else {
         this.failed.set(true);

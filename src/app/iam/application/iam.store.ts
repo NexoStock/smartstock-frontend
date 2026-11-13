@@ -60,7 +60,12 @@ export class IamStore {
     return request.pipe(
       tap((session) => this.startSession(session)),
       map((): AuthResult => 'OK'),
-      catchError((e) => of<AuthResult>(apiCode(e) === 'INVALID_CREDENTIALS' || apiCode(e) === 'EMAIL_TAKEN' ? (apiCode(e) as AuthResult) : 'ERROR')),
+      catchError((e) => {
+        const code = apiCode(e);
+        if (code === 'INVALID_CREDENTIALS') return of<AuthResult>('INVALID_CREDENTIALS');
+        if (code === 'EMAIL_TAKEN' || code === 'EMAIL_ALREADY_REGISTERED') return of<AuthResult>('EMAIL_TAKEN');
+        return of<AuthResult>('ERROR');
+      }),
       tap(() => this.loading.set(false)),
     );
   }
