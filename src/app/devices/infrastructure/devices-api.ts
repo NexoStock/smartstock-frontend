@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, map } from 'rxjs';
+import { Observable, forkJoin, map } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { BaseApi } from '../../shared/infrastructure/base-api';
 import { BaseApiEndpoint } from '../../shared/infrastructure/base-api-endpoint';
@@ -20,9 +20,16 @@ export class DevicesApi extends BaseApi {
     );
   }
 
+  // Products do not carry their sensor, so a product is linked when some sensor points to it.
   linkableProducts(): Observable<LinkableProduct[]> {
-    return this.http.get<LinkableProductResource[]>(`${this.baseUrl}${environment.endpoints.products}`).pipe(
-      map((list) => list.map((r) => this.assembler.toLinkable(r))),
+    return forkJoin({
+      products: this.http.get<LinkableProductResource[]>(`${this.baseUrl}${environment.endpoints.products}`),
+      sensors: this.http.get<SensorResource[]>(this.sensorsUrl),
+    }).pipe(
+      map(({ products, sensors }) => {
+        const linked = new Set(sensors.map((s) => s.productoId).filter((id) => id != null));
+        return products.map((r) => this.assembler.toLinkable({ ...r, sensorId: linked.has(r.id) ? r.id : null }));
+      }),
     );
   }
 }
