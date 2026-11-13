@@ -4,41 +4,34 @@ export interface PurchaseItemResource {
   productoId: number;
   productoNombre?: string;
   cantidad: number;
-  costoUnitario: number;
-  subtotal?: number;
+  precioUnitario: number;
 }
 
 export interface PurchaseResource {
-  id: string;
+  id: number;
   proveedorId: number;
   proveedorNombre?: string;
-  fecha: string;
+  fecha?: string;
   estado: 'PENDING' | 'RECEIVED' | 'CANCELLED';
   total: number;
-  restockingNeedId: number | null;
-  items: PurchaseItemResource[];
+  restockingNeedId?: number | null;
+  productos: PurchaseItemResource[];
   movimientos?: StockMovementResource[];
-}
-
-export interface PurchaseListResource {
-  compras: PurchaseResource[];
-  total: number;
 }
 
 export interface RegisterPurchaseRequest {
   proveedorId: number;
-  fecha: string;
-  restockingNeedId: number | null;
-  items: {
+  productos: {
     productoId: number;
     cantidad: number;
-    costoUnitario: number;
+    precioUnitario: number;
   }[];
 }
 
 export interface SupplierResource {
   id: number | null;
   nombre: string;
+  ruc: string;
   correo: string;
   telefono: string;
 }
