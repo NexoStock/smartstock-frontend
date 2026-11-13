@@ -1,5 +1,5 @@
 export const environment = {
-  apiBaseUrl: 'http://localhost:3000',
+  apiBaseUrl: 'http://localhost:8080/api',
   endpoints: {
     auth: '/auth',
     products: '/productos',

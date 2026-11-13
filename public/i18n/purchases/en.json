@@ -55,6 +55,7 @@
       "supplier": "Supplier",
       "contact": "Contact",
       "name": "Supplier name",
+      "taxId": "RUC",
       "email": "Email",
       "phone": "Phone",
       "save": "Save supplier",
@@ -63,6 +64,7 @@
       "empty": "No suppliers yet.",
       "error": {
         "name": "Enter the supplier name.",
+        "taxId": "Enter the 11-digit RUC.",
         "email": "Enter a valid email.",
         "phone": "Enter a valid phone number."
       }
