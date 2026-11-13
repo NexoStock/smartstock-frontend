@@ -19,14 +19,14 @@ export class PurchaseAssembler extends BaseAssembler<Purchase, PurchaseResource>
 
   toEntityFromResource(r: PurchaseResource): Purchase {
     return new Purchase(
-      r.id,
-      r.fecha,
+      String(r.id),
+      r.fecha ?? '',
       r.estado,
       r.total,
       r.proveedorId,
       r.proveedorNombre ?? '',
-      r.items.map(
-        (i) => new PurchaseItem(i.productoId, i.productoNombre ?? '', i.cantidad, i.costoUnitario),
+      (r.productos ?? []).map(
+        (i) => new PurchaseItem(i.productoId, i.productoNombre ?? '', i.cantidad, i.precioUnitario),
       ),
       this.movements.toEntitiesFromResources(r.movimientos ?? []),
       r.restockingNeedId ?? null,
@@ -35,16 +35,16 @@ export class PurchaseAssembler extends BaseAssembler<Purchase, PurchaseResource>
 
   toResourceFromEntity(e: Purchase): PurchaseResource {
     return {
-      id: String(e.id),
+      id: Number(e.id),
       proveedorId: e.supplierId,
       fecha: e.date,
       estado: e.status,
       total: e.total,
       restockingNeedId: e.restockingNeedId,
-      items: e.items.map((i) => ({
+      productos: e.items.map((i) => ({
         productoId: i.productId,
         cantidad: i.quantity,
-        costoUnitario: i.unitCost,
+        precioUnitario: i.unitCost,
       })),
     };
   }

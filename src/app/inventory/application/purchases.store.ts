@@ -79,12 +79,10 @@ export class PurchasesStore {
   ): Observable<PurchaseActionResult<string>> {
     const request = {
       proveedorId: supplierId,
-      fecha: date,
-      restockingNeedId: needId,
-      items: items.map((i) => ({
+      productos: items.map((i) => ({
         productoId: i.productId,
         cantidad: i.quantity,
-        costoUnitario: i.unitCost,
+        precioUnitario: i.unitCost,
       })),
     };
 
