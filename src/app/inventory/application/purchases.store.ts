@@ -95,10 +95,11 @@ export class PurchasesStore {
 
   createSupplier(
     name: string,
+    taxId: string,
     email: string,
     phone: string,
   ): Observable<PurchaseActionResult<Supplier>> {
-    return this.run(this.api.suppliers.create(new Supplier(null, name, email, phone)));
+    return this.run(this.api.suppliers.create(new Supplier(null, name, taxId, email, phone)));
   }
 
   private run<T>(request: Observable<T>): Observable<PurchaseActionResult<T>> {

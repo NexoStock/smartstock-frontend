@@ -31,6 +31,7 @@ export interface RegisterPurchaseRequest {
 export interface SupplierResource {
   id: number | null;
   nombre: string;
+  ruc: string;
   correo: string;
   telefono: string;
 }

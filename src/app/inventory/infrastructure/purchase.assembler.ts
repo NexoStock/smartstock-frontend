@@ -56,13 +56,14 @@ export class PurchaseAssembler extends BaseAssembler<Purchase, PurchaseResource>
 
 export class SupplierAssembler extends BaseAssembler<Supplier, SupplierResource> {
   toEntityFromResource(r: SupplierResource): Supplier {
-    return new Supplier(r.id, r.nombre, r.correo, r.telefono);
+    return new Supplier(r.id, r.nombre, r.ruc ?? '', r.correo, r.telefono);
   }
 
   toResourceFromEntity(e: Supplier): SupplierResource {
     return {
       id: e.id === null ? null : Number(e.id),
       nombre: e.name,
+      ruc: e.taxId,
       correo: e.email,
       telefono: e.phone,
     };
