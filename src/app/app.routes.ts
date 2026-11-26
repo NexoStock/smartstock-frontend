@@ -5,6 +5,13 @@ import { iamRoutes } from './iam/presentation/iam.routes';
 export const routes: Routes = [
   ...iamRoutes, // /sign-in, /sign-up, /forgot-password (public, without layout)
   {
+    path: 'terms-and-conditions',
+    loadComponent: () =>
+      import('./shared/presentation/views/terms-and-conditions').then(
+        (m) => m.TermsAndConditions,
+      ),
+  },
+  {
     path: '',
     loadComponent: () => import('./shared/presentation/components/layout').then((m) => m.Layout),
     canActivate: [authenticationGuard],
