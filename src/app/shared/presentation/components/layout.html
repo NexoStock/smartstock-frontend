@@ -33,6 +33,9 @@
       </div>
     </header>
     <main id="main" class="main"><router-outlet /></main>
-    <footer class="footer">{{ 'shared.footer' | translate }}</footer>
+    <footer class="footer">
+      {{ 'shared.footer' | translate }}
+      <a routerLink="/terms-and-conditions">{{ 'shared.termsAndConditions' | translate }}</a>
+    </footer>
   </div>
 </div>

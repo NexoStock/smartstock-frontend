@@ -6,5 +6,8 @@
   <main class="panel">
     <div class="lang"><app-language-switcher /></div>
     <div class="card"><ng-content /></div>
+    <footer>
+      <a routerLink="/terms-and-conditions">{{ 'shared.termsAndConditions' | translate }}</a>
+    </footer>
   </main>
 </div>

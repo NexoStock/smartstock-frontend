@@ -12,6 +12,43 @@
     "empty": "There is nothing to show yet.",
     "account": "Account",
     "footer": "SmartStock · Real inventory, always visible",
+    "termsAndConditions": "Terms and Conditions",
+    "termsPage": {
+      "updated": "Last updated: September 2026",
+      "intro": "These terms govern the use of SmartStock, the inventory monitoring platform operated by NexoStock. By creating an account or installing a sensor you accept what is written below.",
+      "service": {
+        "title": "1. The service",
+        "text": "SmartStock reads the weight of the products you monitor through IoT sensors, turns it into an estimated stock level, compares it against the quantity you record and notifies you when a product reaches the minimum threshold or when the difference exceeds ten percent. The estimate in units is an aid to decision making, not a legal inventory record."
+      },
+      "accounts": {
+        "title": "2. Accounts and responsible use",
+        "text": "You are responsible for the accuracy of the details you register and for keeping your credentials confidential. We may suspend an account used to attack the service, to access data belonging to another business, or in a way that breaks applicable law."
+      },
+      "data": {
+        "title": "3. Your data",
+        "text": "The sensor readings, the catalogue and the recorded quantities belong to your business. We process them to provide the service and we do not sell them to third parties. You may request their export or deletion at any time."
+      },
+      "notifications": {
+        "title": "4. Notifications",
+        "text": "Alerts are sent through the channel you configure. Their delivery depends on third-party services and on your connectivity, so we cannot guarantee that every notification arrives instantly. SmartStock does not replace the supervision of your inventory."
+      },
+      "plans": {
+        "title": "5. Plans and cancellation",
+        "text": "Plans are billed monthly per store and sensors once. You may cancel at any time, with effect at the end of the period already paid for, with no cancellation fee. A price change is announced thirty days in advance."
+      },
+      "accessibility": {
+        "title": "6. Accessibility and inclusion",
+        "text": "The interface is available in English and Latin American Spanish, supports keyboard navigation and assistive technologies, and respects the reduced motion preference of your system. If you find a barrier that prevents you from using the product, we treat it as a defect."
+      },
+      "ethics": {
+        "title": "7. Ethical commitment",
+        "text": "NexoStock develops SmartStock following the principles of the ACM/IEEE Software Engineering Code of Ethics and Professional Practice and the code of ethics of the Colegio de Ingenieros del Perú: to act in the interest of the client and the public, to state honestly what the product does and does not do, to not overstate the accuracy of a weight estimate, to protect the confidentiality of the information entrusted to us, and to maintain the product we have delivered."
+      },
+      "contact": {
+        "title": "8. Contact",
+        "text": "For questions about these terms, about your data or about accessibility, write to us from the form on the home page."
+      }
+    },
     "menu": {
       "dashboard": "Dashboard",
       "home": "Home",
