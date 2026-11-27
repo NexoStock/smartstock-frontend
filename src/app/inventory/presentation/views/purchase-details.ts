@@ -99,7 +99,7 @@ import { PurchasesStore } from '../../application/purchases.store';
               </dt>
 
               <dd>
-                {{ p.date | date: 'mediumDate' }}
+                {{ p.date | date: 'dd/MM/yyyy' }}
               </dd>
             </div>
 
