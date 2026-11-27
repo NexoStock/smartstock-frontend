@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, map } from 'rxjs';
+import { Observable, forkJoin, map, of, switchMap } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { DateRange, toQuery } from '../../shared/domain/model/date-range';
 
@@ -9,6 +9,7 @@ import { BaseApiEndpoint } from '../../shared/infrastructure/base-api-endpoint';
 import { Purchase, PurchaseProductOption, Supplier } from '../domain/model/purchase.entity';
 
 import { PurchaseAssembler, SupplierAssembler } from './purchase.assembler';
+import { StockMovementResource } from './stock-movement.resource';
 
 import {
   PurchaseProductOptionResource,
@@ -17,6 +18,13 @@ import {
   SupplierResource,
 } from './purchase.resource';
 
+interface PurchaseMovementApiResource {
+  id: number;
+  quantity: number;
+  type: string;
+  reference: string | null;
+  createdAt: string | null;
+}
 @Injectable({ providedIn: 'root' })
 export class PurchasesApi extends BaseApi {
   private readonly url = `${this.baseUrl}${environment.endpoints.purchases}`;
@@ -47,9 +55,76 @@ export class PurchasesApi extends BaseApi {
   }
 
   get(id: string): Observable<Purchase> {
-    return this.http
-      .get<PurchaseResource>(`${this.url}/${id}`)
-      .pipe(map((r) => this.assembler.toEntityFromResource(r)));
+    return forkJoin({
+      resource: this.http.get<PurchaseResource>(`${this.url}/${id}`),
+      suppliers: this.http.get<SupplierResource[]>(
+        `${this.baseUrl}${environment.endpoints.suppliers}`
+      ),
+      products: this.http.get<PurchaseProductOptionResource[]>(
+        `${this.baseUrl}${environment.endpoints.products}`
+      ),
+    }).pipe(
+      switchMap(({ resource, suppliers, products }) => {
+        const items = (resource.productos ?? []).map((item) => ({
+          ...item,
+          productoNombre:
+            item.productoNombre ||
+            products.find((p) => p.id === item.productoId)?.nombre ||
+            `Producto #${item.productoId}`,
+        }));
+
+        const requests: Observable<StockMovementResource[]>[] =
+          resource.estado === 'RECEIVED'
+            ? items.map((item) => {
+                const reference =
+                  `PURCHASE-${resource.id}-PRODUCT-${item.productoId}`;
+
+                return this.http
+                  .get<PurchaseMovementApiResource[]>(
+                    `${this.baseUrl}${environment.endpoints.products}/${item.productoId}/movimientos`
+                  )
+                  .pipe(
+                    map((history): StockMovementResource[] =>
+                      history
+                        .filter(
+                          (movement) =>
+                            movement.type === 'PURCHASE_RECEIPT' &&
+                            movement.reference === reference
+                        )
+                        .map((movement) => ({
+                          id: movement.id,
+                          productoId: item.productoId,
+                          productoNombre: item.productoNombre,
+                          tipo: 'IN',
+                          origen: 'PURCHASE',
+                          origenId: String(resource.id),
+                          cantidad: movement.quantity,
+                          fecha: movement.createdAt ?? '',
+                        }))
+                    )
+                  );
+              })
+            : [];
+
+        const histories = requests.length
+          ? forkJoin(requests)
+          : of([] as StockMovementResource[][]);
+
+        return histories.pipe(
+          map((groups) =>
+            this.assembler.toEntityFromResource({
+              ...resource,
+              proveedorNombre:
+                resource.proveedorNombre ||
+                suppliers.find((s) => s.id === resource.proveedorId)?.nombre ||
+                `Proveedor #${resource.proveedorId}`,
+              productos: items,
+              movimientos: groups.flat(),
+            })
+          )
+        );
+      })
+    );
   }
 
   register(request: RegisterPurchaseRequest): Observable<{ id: string }> {
