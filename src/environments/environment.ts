@@ -1,5 +1,5 @@
 export const environment = {
-  apiBaseUrl: 'https://smartstock-backend-production-36b6ce8c.up.railway.app/api',
+  apiBaseUrl: 'https://smartstock-backend-production-df40118a.up.railway.app/api',
   endpoints: {
     auth: '/auth',
     products: '/productos',
